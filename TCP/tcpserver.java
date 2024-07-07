@@ -1,5 +1,6 @@
 import java.io.*;
 import java.net.*;
+import java.util.*;
 public class tcpserver extends Thread
 {
 	Thread t1,t2;
@@ -25,31 +26,32 @@ public class tcpserver extends Thread
 	}
 	public void run()
 	{
-	    while(true){
-		if(Thread.currentThread()==t1)
+		while(true)
 		{
-			try
+			if(Thread.currentThread()==t1)
 			{
-				a=buf.readLine();
-				System.out.println("from client :"+a);
-				//StringBuilder sb=new StringBuilder();
-				String numbers[]=a.split(",");
-				int sum=0;
-				//int num;
-				int num[]=new int[numbers.length];
-				for(int i=0;i<numbers.length;i++)
+				try
 				{
-					num[i]=Integer.parseInt(numbers[i])
-					sum+=num[i];
+					str=br.readLine();
+					pout.println(str);
 				}
-				String val=String.valueOf(sum);
-				pout.println(val);
+				catch(Exception e)
+				{
+					System.out.println("error :"+e);
+				}
 			}
-			catch(Exception e)
+			else
 			{
-				System.out.println("error :"+e);
+				try
+				{
+					a=buf.readLine();
+					System.out.println("from client :"+a);
+				}
+				catch(Exception e)
+				{
+					System.out.println("error :"+e);
+				}
 			}
-		}
 		}
 	}
 	public static void main(String args[])
