@@ -11,10 +11,9 @@ public class tcpclient extends Thread
 	{
 		try
 		{
-			client=new Socket("127.0.0.1",5555);
+			client=new Socket("localhost",5555);
 			br=new BufferedReader(new InputStreamReader(System.in));
-			buf=new BufferedReader(new
-			InputStreamReader(client.getInputStream()));
+			buf=new BufferedReader(new InputStreamReader(client.getInputStream()));
 			pout=new PrintWriter(client.getOutputStream(),true);
 		}
 		catch(Exception e)

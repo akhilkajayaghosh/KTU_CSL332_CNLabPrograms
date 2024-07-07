@@ -15,9 +15,8 @@ public class tcpserver extends Thread
 			server=new ServerSocket(5555);
 			client=server.accept();
 			br=new BufferedReader(new InputStreamReader(System.in));
-			buf=new BufferedReader(new
-			InputStreamReader(new client.getInputStream()));
-			pout=new PrintWriter(new client.getOutputStream(),true);
+			buf=new BufferedReader(new InputStreamReader(client.getInputStream()));
+			pout=new PrintWriter(client.getOutputStream(),true);
 		}
 		catch(Exception e)
 		{
