@@ -1,3 +1,7 @@
+/*Write a program for client server communication using TCP where client
+sends an array of integers to the server. The Server should calculate and send back
+the arithmetic mean which should be displayed in client.*/
+
 import java.io.*;
 import java.net.*;
 public class MeanS {
