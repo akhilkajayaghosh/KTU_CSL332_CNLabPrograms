@@ -1,3 +1,7 @@
+/*Write a program for client server communication using TCP where client
+sends a string and server gives back a message “The string is Palindrome” if it is,
+and reverse of that string otherwise.*/
+
 import java.io.*;
 import java.util.*;
 import java.net.*;
