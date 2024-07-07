@@ -25,32 +25,31 @@ public class tcpserver extends Thread
 	}
 	public void run()
 	{
-		while(true)
+	    while(true){
+		if(Thread.currentThread()==t1)
 		{
-			if(Thread.currentThread()==t1)
+			try
 			{
-				try
+				a=buf.readLine();
+				System.out.println("from client :"+a);
+				//StringBuilder sb=new StringBuilder();
+				String numbers[]=a.split(",");
+				int sum=0;
+				//int num;
+				int num[]=new int[numbers.length];
+				for(int i=0;i<numbers.length;i++)
 				{
-					str=br.readLine();
-					pout.println(str);
+					num[i]=Integer.parseInt(numbers[i])
+					sum+=num[i];
 				}
-				catch(Exception e)
-				{
-					System.out.println("error :"+e);
-				}
+				String val=String.valueOf(sum);
+				pout.println(val);
 			}
-			else
+			catch(Exception e)
 			{
-				try
-				{
-					a=buf.readLine();
-					System.out.println("from client :"+a);
-				}
-				catch(Exception e)
-				{
-					System.out.println("error :"+e);
-				}
+				System.out.println("error :"+e);
 			}
+		}
 		}
 	}
 	public static void main(String args[])
