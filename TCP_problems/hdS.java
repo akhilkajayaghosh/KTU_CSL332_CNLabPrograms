@@ -1,3 +1,10 @@
+/*Implement a TCP client and server. The client will pass the server two strings of
+equal length (eg: “fridge and fruits”). On receiving two strings from a client, the server
+should calculate the hamming distance (in eg. it is 4) between them and send back to the
+client. The client will display the received distance and exit.
+[Hint: Hamming distance between two strings of equal length is the number of positions
+at which the corresponding characters are different.]*/
+
 import java.io.*;
 import java.util.*;
 import java.net.*;
